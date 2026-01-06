@@ -12,4 +12,5 @@ public enum NetworkError: Error {
     case parsingError
     case decodingFailure
     case invalidStatusCode(Int)
+    case jsonEncodingFailed(error: Error)
 }

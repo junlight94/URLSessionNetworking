@@ -37,6 +37,10 @@ extension Request {
             urlRequest.setValue(header.value, forHTTPHeaderField: header.name)
         }
         
-        return urlRequest
+        // RequestParameters
+        return try parameter.encoder.encode(
+            parameter.value,
+            into: urlRequest
+        )
     }
 }

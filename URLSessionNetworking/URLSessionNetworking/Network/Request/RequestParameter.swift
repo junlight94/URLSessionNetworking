@@ -7,8 +7,25 @@
 
 import Foundation
 
-public enum RequestParameter {
-    case query([URLQueryItem])
-    case body(Encodable)
-    case none
+public struct RequestParameter {
+    let value: Encodable & Sendable
+    let encoder: ParameterEncoder
+}
+
+extension RequestParameter {
+    static func query(_ query: Encodable & Sendable) -> RequestParameter {
+        RequestParameter(
+            value: query,
+            encoder: URLQueryEncoder()
+        )
+    }
+
+    static func jsonBody(_ body: Encodable & Sendable) -> RequestParameter {
+        RequestParameter(
+            value: body,
+            encoder: JSONParameterEncoder()
+        )
+    }
+
+    static let none: RequestParameter? = nil
 }
