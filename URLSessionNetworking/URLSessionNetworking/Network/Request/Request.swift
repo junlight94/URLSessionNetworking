@@ -11,17 +11,17 @@ public protocol Request {
     associatedtype Response: Decodable & Sendable
     
     var header: [HTTPHeader] { get }
-    var baseURL: URL? { get }
     var path: String { get }
     var method: HTTPMethod { get }
     var parameter: RequestParameter { get }
+    var timeoutInterval: TimeInterval? { get }
     
     func asRequest() -> URLRequest
 }
 
 extension Request {
     func asRequest() throws -> URLRequest {
-        guard let baseURL = baseURL else {
+        guard let baseURL = NetworkConfiguration.baseURL else {
             throw NetworkError.invalidURL
         }
         
@@ -35,6 +35,11 @@ extension Request {
         // header
         header.forEach { header in
             urlRequest.setValue(header.value, forHTTPHeaderField: header.name)
+        }
+        
+        // timeout
+        if let timeoutInterval {
+            urlRequest.timeoutInterval = timeoutInterval
         }
         
         // RequestParameters
