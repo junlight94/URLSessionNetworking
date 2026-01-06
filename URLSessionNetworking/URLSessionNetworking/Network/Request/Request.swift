@@ -28,7 +28,14 @@ extension Request {
         let url = baseURL.appending(path: path)
         
         var urlRequest = URLRequest(url: url)
+        
+        // method
         urlRequest.httpMethod = method.rawValue
+        
+        // header
+        header.forEach { header in
+            urlRequest.setValue(header.value, forHTTPHeaderField: header.name)
+        }
         
         return urlRequest
     }
