@@ -1,15 +1,11 @@
 //
-//  NetworkClient.swift
+//  DefaultNetworkClient.swift
 //  URLSessionNetworking
 //
-//  Created by Junyoung on 1/5/26.
+//  Created by Junyoung on 1/6/26.
 //
 
 import Foundation
-
-public protocol NetworkClient {
-    func send<R: Request>(with request: R) async throws -> R.Response
-}
 
 public final class DefaultNetworkClient: NetworkClient {
     private let session: URLSession
@@ -19,16 +15,16 @@ public final class DefaultNetworkClient: NetworkClient {
     }
     
     public func send<R: Request>(with request: R) async throws -> R.Response {
-        let URLRequest = request.asRequest()
+        let urlRequest = request.asRequest()
         
-        let (data, urlResponse) = try await session.data(for: URLRequest)
+        let (data, urlResponse) = try await session.data(for: urlRequest)
         let decoded: R.Response = try handleResponse(data: data, response: urlResponse)
         
         return decoded
     }
 }
 
-extension NetworkClient {
+extension DefaultNetworkClient {
     func handleResponse<T: Decodable & Sendable>(
         data: Data,
         response: URLResponse
