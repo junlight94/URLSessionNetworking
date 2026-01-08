@@ -14,7 +14,7 @@ public struct NetworkConfiguration {
     }()
     
     /// 기본 헤더 정보
-    static let defaultHeader: [HTTPHeader] = {
+    public static let defaultHeader: [HTTPHeader] = {
        [
             HTTPHeader(name: "Accept", value: "application/json"),
             HTTPHeader(name: "X-Platform", value: "iOS"),

@@ -34,3 +34,9 @@ extension HTTPHeader {
         authorization("Bearer \(bearerToken)")
     }
 }
+
+extension URLRequest {
+    mutating func header(_ header: HTTPHeader) {
+        self.setValue(header.value, forHTTPHeaderField: header.name)
+    }
+}

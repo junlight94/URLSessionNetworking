@@ -15,11 +15,14 @@ public protocol Request {
     var method: HTTPMethod { get }
     var parameter: RequestParameter { get }
     var timeoutInterval: TimeInterval? { get }
+    var maxRetryAttempts: Int { get }
     
     func asRequest() -> URLRequest
 }
 
 extension Request {
+    var maxRetryAttempts: Int { 3 }
+    
     func asRequest() throws -> URLRequest {
         guard let baseURL = NetworkConfiguration.baseURL else {
             throw NetworkError.invalidURL
