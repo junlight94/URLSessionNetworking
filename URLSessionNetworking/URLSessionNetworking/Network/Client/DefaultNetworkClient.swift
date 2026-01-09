@@ -17,7 +17,7 @@ public final class DefaultNetworkClient: NetworkClient {
     }
     
     public func send<R: Request>(with request: R) async throws -> R.Response {
-        let urlRequest = request.asRequest()
+        let urlRequest = try request.asRequest()
         
         let (data, urlResponse) = try await requestData(urlRequest)
         let decoded: R.Response = try handleResponse(data: data, response: urlResponse)
