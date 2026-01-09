@@ -75,3 +75,14 @@ public struct URLQueryEncoder: ParameterEncoder {
         return request
     }
 }
+
+public struct EmptyEncoder: ParameterEncoder {
+    
+    public func encode<Parameters: Encodable & Sendable>(
+        _ parameters: Parameters?,
+        into request: URLRequest
+    ) throws -> URLRequest {
+        
+        return request
+    }
+}

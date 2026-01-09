@@ -27,5 +27,8 @@ extension RequestParameter {
         )
     }
 
-    static let none: RequestParameter? = nil
+    static let none: RequestParameter = RequestParameter(
+        value: "",
+        encoder: EmptyEncoder()
+    )
 }
