@@ -8,12 +8,10 @@
 import Foundation
 
 public final class DefaultNetworkClient: NetworkClient {
-    private let session: URLSession
-    private let interceptor: RequestInterceptor
+    private let session: Session
     
     public init(session: Session) {
-        self.session = session.session
-        self.interceptor = session.interceptor
+        self.session = session
     }
     
     public func send<R: Request>(with request: R) async throws -> R.Response {
@@ -36,13 +34,13 @@ extension DefaultNetworkClient {
         _ originalRequest: URLRequest,
         retryCount: Int = 0
     ) async throws -> (data: Data, urlResponse: URLResponse)  {
-        let adaptedRequest = try await interceptor.adapt(originalRequest)
+        let adaptedRequest = try await session.interceptor.adapt(originalRequest)
 
         do {
-            let (data, urlResponse) = try await session.data(for: adaptedRequest)
+            let (data, urlResponse) = try await session.session.data(for: adaptedRequest)
             return (data, urlResponse)
         } catch {
-            let decision = try await interceptor.retry(
+            let decision = try await session.interceptor.retry(
                 adaptedRequest,
                 dueTo: error,
                 retryCount: retryCount

@@ -20,8 +20,7 @@ classDiagram
     }
     
     class DefaultNetworkClient {
-        -session: URLSession
-        -interceptor: RequestInterceptor
+        -session: Session
         +send(request) Response
         -requestData() (Data, URLResponse)
         -handleResponse() T
@@ -29,6 +28,7 @@ classDiagram
     
     class Session {
         +session: URLSession
+        +configuration: URLSessionConfiguration
         +interceptor: RequestInterceptor
         +plain: Session
         +auth(tokenProvider) Session

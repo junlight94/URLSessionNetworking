@@ -9,17 +9,22 @@ import Foundation
 
 public struct Session: Sendable {
     public let session: URLSession
+    public let configuration: URLSessionConfiguration
     public let interceptor: RequestInterceptor
     
-    private init(session: URLSession, interceptor: RequestInterceptor) {
-        self.session = session
+    private init(
+        configuration: URLSessionConfiguration,
+        interceptor: RequestInterceptor
+    ) {
+        self.session = URLSession(configuration: configuration)
+        self.configuration = configuration
         self.interceptor = interceptor
     }
 }
 
 extension Session {
     public static let plain = Session(
-        session: .shared,
+        configuration: URLSessionConfiguration.default,
         interceptor: DefaultInterceptor(
             adapters: [HeaderAdapter()],
             retrier: DefaultRequestRetrier()
@@ -35,6 +40,9 @@ extension Session {
             retrier: DefaultRequestRetrier()
         )
         
-        return Session(session: .shared, interceptor: interceptor)
+        return Session(
+            configuration: URLSessionConfiguration.default,
+            interceptor: interceptor
+        )
     }
 }
