@@ -14,7 +14,7 @@ public protocol ParameterEncoder: Sendable {
     ) throws -> URLRequest
 }
 
-public final class JSONParameterEncoder: ParameterEncoder {
+public struct JSONParameterEncoder: ParameterEncoder {
     private let encoder: JSONEncoder
     
     public init(encoder: JSONEncoder = JSONEncoder()) {
