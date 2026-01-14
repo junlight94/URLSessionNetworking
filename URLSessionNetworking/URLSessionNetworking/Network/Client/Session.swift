@@ -12,7 +12,7 @@ public struct Session: Sendable {
     public let configuration: URLSessionConfiguration
     public let interceptor: RequestInterceptor
     
-    private init(
+    init(
         configuration: URLSessionConfiguration,
         interceptor: RequestInterceptor
     ) {

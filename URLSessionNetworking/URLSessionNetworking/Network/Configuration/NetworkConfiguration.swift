@@ -10,7 +10,7 @@ import Foundation
 public struct NetworkConfiguration {
     /// BaseURL
     static let baseURL: URL? = {
-        return URL(string: "")
+        return URL(string: "https://test-api.com")
     }()
     
     /// 기본 헤더 정보

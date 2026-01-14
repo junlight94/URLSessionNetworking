@@ -6,19 +6,61 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		084CCF302F17BEAD00996809 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0884928D2F0BED860027738B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 088492942F0BED860027738B;
+			remoteInfo = URLSessionNetworking;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		084CCF2C2F17BEAD00996809 /* URLSessionNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URLSessionNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		088492952F0BED860027738B /* URLSessionNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLSessionNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		084CCF372F17BFDF00996809 /* Exceptions for "URLSessionNetworking" folder in "URLSessionNetworking" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Network/Client/README.md,
+				Network/Configuration/README.md,
+				Network/Error/README.md,
+				Network/HTTP/README.md,
+				Network/Interceptor/README.md,
+				Network/README.md,
+				Network/Request/README.md,
+			);
+			target = 088492942F0BED860027738B /* URLSessionNetworking */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		084CCF2D2F17BEAD00996809 /* URLSessionNetworkingTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = URLSessionNetworkingTests;
+			sourceTree = "<group>";
+		};
 		088492972F0BED860027738B /* URLSessionNetworking */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				084CCF372F17BFDF00996809 /* Exceptions for "URLSessionNetworking" folder in "URLSessionNetworking" target */,
+			);
 			path = URLSessionNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		084CCF292F17BEAD00996809 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		088492922F0BED860027738B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				088492972F0BED860027738B /* URLSessionNetworking */,
+				084CCF2D2F17BEAD00996809 /* URLSessionNetworkingTests */,
 				088492962F0BED860027738B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				088492952F0BED860027738B /* URLSessionNetworking.app */,
+				084CCF2C2F17BEAD00996809 /* URLSessionNetworkingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +92,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		084CCF2B2F17BEAD00996809 /* URLSessionNetworkingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 084CCF322F17BEAD00996809 /* Build configuration list for PBXNativeTarget "URLSessionNetworkingTests" */;
+			buildPhases = (
+				084CCF282F17BEAD00996809 /* Sources */,
+				084CCF292F17BEAD00996809 /* Frameworks */,
+				084CCF2A2F17BEAD00996809 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				084CCF312F17BEAD00996809 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				084CCF2D2F17BEAD00996809 /* URLSessionNetworkingTests */,
+			);
+			name = URLSessionNetworkingTests;
+			packageProductDependencies = (
+			);
+			productName = URLSessionNetworkingTests;
+			productReference = 084CCF2C2F17BEAD00996809 /* URLSessionNetworkingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		088492942F0BED860027738B /* URLSessionNetworking */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 088492A02F0BED870027738B /* Build configuration list for PBXNativeTarget "URLSessionNetworking" */;
@@ -80,6 +147,10 @@
 				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					084CCF2B2F17BEAD00996809 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = 088492942F0BED860027738B;
+					};
 					088492942F0BED860027738B = {
 						CreatedOnToolsVersion = 26.0;
 					};
@@ -100,11 +171,19 @@
 			projectRoot = "";
 			targets = (
 				088492942F0BED860027738B /* URLSessionNetworking */,
+				084CCF2B2F17BEAD00996809 /* URLSessionNetworkingTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		084CCF2A2F17BEAD00996809 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		088492932F0BED860027738B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +194,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		084CCF282F17BEAD00996809 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		088492912F0BED860027738B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +210,57 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		084CCF312F17BEAD00996809 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 088492942F0BED860027738B /* URLSessionNetworking */;
+			targetProxy = 084CCF302F17BEAD00996809 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		084CCF332F17BEAD00996809 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SUMATJC294;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.junlight.URLSessionNetworkingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/URLSessionNetworking.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/URLSessionNetworking";
+			};
+			name = Debug;
+		};
+		084CCF342F17BEAD00996809 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SUMATJC294;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.junlight.URLSessionNetworkingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/URLSessionNetworking.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/URLSessionNetworking";
+			};
+			name = Release;
+		};
 		0884929E2F0BED870027738B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -313,6 +449,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		084CCF322F17BEAD00996809 /* Build configuration list for PBXNativeTarget "URLSessionNetworkingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				084CCF332F17BEAD00996809 /* Debug */,
+				084CCF342F17BEAD00996809 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		088492902F0BED860027738B /* Build configuration list for PBXProject "URLSessionNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
